@@ -1,0 +1,15 @@
+<!-- <pre>
+    {{pokemonCards | json}}
+</pre> -->
+
+
+<div class="cards" >
+    <div 
+    *ngFor="let pokemon of pokemonCards?.cards | orderBy:'name'" >
+    <div     
+    class="image-card" 
+    [ngStyle]="{'background-image': 'url(' + pokemon.imageUrl + ')'}">
+    </div>
+{{pokemon.name}}
+    </div>
+</div>
