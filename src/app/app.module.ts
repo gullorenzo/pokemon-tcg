@@ -9,6 +9,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonCardsComponent } from './pokemon-cards/pokemon-cards.component';
 import { OrderByPipe } from './order-by.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PodemonDatailsComponent } from './podemon-datails/podemon-datails.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { OrderByPipe } from './order-by.pipe';
     HeaderComponent,
     FooterComponent,
     PokemonCardsComponent,
-    OrderByPipe
+    OrderByPipe,
+    PodemonDatailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,15 +1,13 @@
-<!-- <pre>
-    {{pokemonCards | json}}
-</pre> -->
 
+<div class="cards-box p-4">
+    <form [formGroup]="form">
+        <input class="form-control form-control-lg w-25" formControlName="pokemonName" type="text" placeholder="Digite o nome do pokemon">
+    </form>
 
-<div class="cards" >
-    <div 
-    *ngFor="let pokemon of pokemonCards?.cards | orderBy:'name'" >
-    <div     
-    class="image-card" 
-    [ngStyle]="{'background-image': 'url(' + pokemon.imageUrl + ')'}">
-    </div>
-{{pokemon.name}}
+</div>
+<div class="cards-box">
+    <div *ngFor="let pokemon of pokemonCards?.cards | orderBy:'name'">
+        <div class="image-card p-4" [ngStyle]="{'background-image': 'url(' + pokemon.imageUrl + ')'}">
+        </div>
     </div>
 </div>
