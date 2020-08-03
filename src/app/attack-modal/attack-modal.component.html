@@ -1,0 +1,41 @@
+<div class="modal-header">
+	<h4 class="modal-title pull-left"> Attack info </h4>
+	<button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div class="box info">
+        <div class="basic-details">
+            <div class="pr-4">
+                <h5>converted Energy Cost</h5>
+                <span>{{data?.convertedEnergyCost}}</span>
+            </div>
+        </div>
+        <div class="basic-details border-top border-ligh">
+            <div class="pr-4">
+                <h5>name</h5>
+                <span>
+                    {{data?.name}}
+                </span>
+            </div>
+        </div>
+        <div class="basic-details border-top border-ligh">
+            <div class="pr-4">
+                <h5>damage</h5>
+                <span>
+                    {{data?.damage}}
+                </span>
+            </div>
+        </div>
+        <div class="basic-details border-top border-ligh">
+            <div class="pr-4">
+                <h5>text</h5>
+                <span>
+                    {{data?.text}}
+                </span>
+            </div>
+        </div>
+    </div>
+
+</div>

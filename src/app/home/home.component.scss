@@ -9,3 +9,10 @@
         margin: auto;
     }
 }
+
+@media (max-width: 767px) {
+    .content{
+        width: 100% !important;
+
+    }
+}

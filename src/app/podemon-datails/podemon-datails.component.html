@@ -1,1 +1,55 @@
-<p>podemon-datails works!</p>
+<div class="cards-box">
+    <div class="d-flex w-100 justify-content-around">
+        <div class="img-card">
+            <img [src]="pokemonData?.card.imageUrlHiRes">
+
+        </div>
+        <div class="box info">
+            <div class="title">
+                <h2>{{pokemonData?.card.name}}</h2>
+            </div>
+            <div class="basic-details">
+                <div class="pr-4">
+                    <h5>id</h5>
+                    <span>{{pokemonData?.card.id}}</span>
+                </div>
+                <div class="pl-4">
+                    <h5>types</h5>
+                    <span>{{pokemonData?.card.types}}</span>
+                </div>
+
+
+            </div>
+            <div class="basic-details border-top border-ligh">
+                <div class="pr-4">
+                    <h5>weakness</h5>
+                    <span *ngFor="let weakness of pokemonData?.card.weaknesses">
+                        {{weakness.type}}
+                        {{weakness.value}}
+                    </span>
+                </div>
+
+                <div class="pl-4">
+                    <h5>resistances</h5>
+                    <span *ngFor="let resistances of pokemonData?.card.resistances">
+                        {{resistances.type}}
+                        {{resistances.value}}
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="basic-details border-top border-ligh">
+                <div class="w-100">
+                    <h4>attacks</h4>
+                    <div class="d-flex justify-content-start">
+                        <div class="pr-4" *ngFor="let attack of pokemonData?.card.attacks" (click)="openModal(attack)">
+                            <span class="badge badge-primary">{{attack.name}}</span>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

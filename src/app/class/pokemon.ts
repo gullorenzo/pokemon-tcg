@@ -2,6 +2,10 @@ export class PokemonCard{
     cards: Card[];
 }
 
+export class ICard {
+    card: Card;
+}
+
 export class Card {
     ability: IAbility;
     artist: string;

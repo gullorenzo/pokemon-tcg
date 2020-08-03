@@ -1,13 +1,49 @@
-
 <div class="cards-box p-4">
-    <form [formGroup]="form">
-        <input class="form-control form-control-lg w-25" formControlName="pokemonName" type="text" placeholder="Digite o nome do pokemon">
+    <form class="w-100" [formGroup]="form">
+        <div class="d-flex col-sm-12 col-md-4">
+            <div class="form-group input-group mb-3">
+                <input class="form-control form-control-lg" formControlName="name" type="text"
+                    placeholder="Digite o nome do pokemon"
+                    [ngClass]="{'border border-danger': form.controls.name.touched && form.controls.name.errors?.required}">
+                <div class="input-group-append">
+                    <button type="button" class="btn btn-secondary" (click)="getByName()">Buscar</button>
+                </div>
+            </div>
+        </div>
     </form>
 
 </div>
 <div class="cards-box">
     <div *ngFor="let pokemon of pokemonCards?.cards | orderBy:'name'">
-        <div class="image-card p-4" [ngStyle]="{'background-image': 'url(' + pokemon.imageUrl + ')'}">
+        <div 
+        class="image-card p-4" 
+        [tooltip]="pokemonData"
+        placement="top" 
+        [ngStyle]="{'background-image': 'url(' + pokemon.imageUrl + ')'}"
+        (click)="getPokemonDetail(pokemon.id)"
+        >
         </div>
+
+        <ng-template #pokemonData>
+        <div>
+            <table class="table table-striped table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Type</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{pokemon.id}}</td>
+                    <td>{{pokemon.name}}</td>
+                    <td>@{{pokemon.types}}</td>
+                  </tr>
+                  <tr>
+                </tbody>
+              </table>
+        </div>
+        </ng-template>
     </div>
 </div>

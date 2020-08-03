@@ -6,4 +6,21 @@
     border-radius: 10px;
     justify-content: space-around;
     margin: 50px;
+    background-color: #292c2f;
 }
+
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    border-radius: 10px;
+    margin: 15px;
+    justify-content: space-around;
+}
+
+@media (max-width: 767px) {
+    .cards-box{
+        margin: 0;
+    }
+}
+
